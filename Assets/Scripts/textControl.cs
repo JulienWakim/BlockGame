@@ -10,6 +10,8 @@ public class textControl : MonoBehaviour
     public GameObject text3;
     public GameObject text4;
     public GameObject blocks;
+    public GameObject basket;
+    public float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -18,14 +20,15 @@ public class textControl : MonoBehaviour
         text2.SetActive(false);
         text3.SetActive(false);
         text4.SetActive(false);
+        basket.SetActive(false);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Time.time);
-        if(Time.time > 1f && Time.time < 21f)
+  
+        if(Time.time > 1f && Time.time < timer-1)
         {
             text1.SetActive(true);
             text2.SetActive(true);
@@ -38,9 +41,10 @@ public class textControl : MonoBehaviour
             text3.SetActive(false);
         }
 
-        if(Time.time > 22f)
+        if(Time.time > timer)
         {
             text4.SetActive(true);
+            basket.SetActive(true);
         }
 
         if (blocks.active)
